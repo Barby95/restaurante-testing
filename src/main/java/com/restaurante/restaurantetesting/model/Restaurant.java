@@ -11,7 +11,7 @@ import lombok.*;
 @NoArgsConstructor // lombok: crea el constructor vacío sin argumentos
 @AllArgsConstructor // lombok: crea el constructor con todos los params
 @Builder
-@Table(name = "restaurantes")
+@Table(name = "Restaurantes")
 public class Restaurant {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,13 +22,13 @@ public class Restaurant {
 
     private Double averagePrice;
 
-    @Column(columnDefinition = "BOOLEAN DEFAULT true")
-    private Boolean active;
+    @Column(columnDefinition = "BOOLEAN DEFAULT true") // Por defecto true
+    private Boolean active = true;
 
     @Enumerated(EnumType.STRING)
     private FoodType foodType;
 
-    public Restaurant(String name, Double averagePrice, Boolean active) {
+    public Restaurant(String name, Double averagePrice) {
         this.name = name;
         this.averagePrice = averagePrice;
         this.active = true;
