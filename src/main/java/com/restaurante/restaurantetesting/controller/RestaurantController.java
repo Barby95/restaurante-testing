@@ -47,6 +47,7 @@ public class RestaurantController {
             //Traer y encargar empleados
             //Traer y cargar las review
             //
+            // reviewRepository.findByRestaurantId
             return "restaurant-detail";
         }
         else{
